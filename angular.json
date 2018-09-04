@@ -121,6 +121,46 @@
           }
         }
       }
+    },
+    "nguniversal-cookies": {
+      "root": "projects/nguniversal-cookies",
+      "sourceRoot": "projects/nguniversal-cookies/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/nguniversal-cookies/tsconfig.lib.json",
+            "project": "projects/nguniversal-cookies/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/nguniversal-cookies/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/nguniversal-cookies/src/test.ts",
+            "tsConfig": "projects/nguniversal-cookies/tsconfig.spec.json",
+            "karmaConfig": "projects/nguniversal-cookies/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/nguniversal-cookies/tsconfig.lib.json",
+              "projects/nguniversal-cookies/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "nguniversal-cookies-app"
