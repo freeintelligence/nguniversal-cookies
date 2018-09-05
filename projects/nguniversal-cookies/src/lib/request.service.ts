@@ -1,9 +1,13 @@
-import { Injectable } from '@angular/core'
+import { Injectable, Inject } from '@angular/core'
+import { REQUEST } from '@nguniversal/express-engine/tokens'
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class NgUniversalRequestService {
 
-  constructor() { }
+  constructor(@Inject(REQUEST) private request: any) { }
+
+  get cookies(): any {
+    return !!this.request.headers.cookie ? this.request.headers.cookie : null
+  }
+
 }

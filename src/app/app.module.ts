@@ -3,12 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { NgUniversalCookiesModule } from 'nguniversal-cookies'
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NgUniversalCookiesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

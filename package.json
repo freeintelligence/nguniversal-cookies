@@ -7,7 +7,12 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "copy-readme": "cp ./README.md ./dist/nguniversal-cookies",
+    "copy-files": "npm run copy-readme",
+    "build:lib": "ng build --prod nguniversal-cookies",
+    "pack": "cd dist/nguniversal-cookies && npm pack",
+    "build:pack": "npm run build:lib && npm run copy-files && npm run pack"
   },
   "private": true,
   "dependencies": {
@@ -20,7 +25,10 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
+    "@nguniversal/express-engine": "^6.1.0",
     "core-js": "^2.5.4",
+    "es-cookie": "^1.2.0",
+    "express": "^4.16.3",
     "rxjs": "^6.0.0",
     "zone.js": "~0.8.26"
   },
